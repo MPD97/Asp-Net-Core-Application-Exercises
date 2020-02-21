@@ -8,17 +8,16 @@ namespace _01_DependencyInjection.Controllers
 {
     public class StringController : Controller
     {
-        public IExampleInterface StringContext { get; }
+        public IExampleInterface InjectedClass { get; }
 
         public StringController(IExampleInterface stringClass)
         {
-            StringContext = stringClass;
+            InjectedClass = stringClass;
         }
 
         public IActionResult Default()
         {
-            ViewData["Result"] = StringContext.GetExampleString();
-            return View();
+            return Content(InjectedClass.GetExampleString());
         }
     }
 }
