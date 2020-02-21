@@ -151,3 +151,18 @@ public class CustomSettings
   }
 }
 ```
+- Now you have to add some **NuGet** packages
+```
+  Microsoft.EntityFrameworkCore.SqlServer
+  Microsoft.EntityFrameworkCore.Design
+  Microsoft.EntityFrameworkCore.Tools
+```
+- Using **Package Manager Console** create first migration
+```
+  Add-Migration Initial
+```
+- Apply Migration
+```
+  Update-Database
+```
+- Then just create **Controllers** using scaffolder. Provide **ApplicationDbContext** and **Model**.
