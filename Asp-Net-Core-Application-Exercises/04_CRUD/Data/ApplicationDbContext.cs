@@ -13,13 +13,29 @@ namespace _04_CRUD.Data
         {
         }
 
-        DbSet<Shop> Shops { get; set; }
-        DbSet<Item> Items { get; set; }
-
+        public DbSet<Shop> Shops { get; set; }
+        public DbSet<Item> Items { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+
+            var shop1 = new Shop
+            {
+                ShopId = 1,
+                Name = "Super Grocery",
+                Created = DateTime.Now
+            };
+            var item1 = new Item
+            {
+                ItemId = Guid.NewGuid(),
+                Name = "Milk 500ml",
+                Cost = 2.32m,
+                ShopId = 1,
+            };
+            modelBuilder.Entity<Shop>().HasData(shop1);
+            modelBuilder.Entity<Item>().HasData(item1);
         }
     }
 }

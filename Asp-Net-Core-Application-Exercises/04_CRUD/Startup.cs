@@ -44,7 +44,7 @@ namespace _04_CRUD
             app.UseMvc(route =>
             {
                 route.MapRoute(name: "default",
-                        template: "{controller=Home}/{action=Index}");
+                        template: "{controller=Shops}/{action=Index}");
             });
         }
     }

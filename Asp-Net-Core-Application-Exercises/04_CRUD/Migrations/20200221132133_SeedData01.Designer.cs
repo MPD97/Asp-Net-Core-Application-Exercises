@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _04_CRUD.Data;
 
 namespace _04_CRUD.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200221132133_SeedData01")]
+    partial class SeedData01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,7 +45,7 @@ namespace _04_CRUD.Migrations
                     b.HasData(
                         new
                         {
-                            ItemId = new Guid("6eb3315e-18e3-4c2f-ad94-82a8d5ae32c4"),
+                            ItemId = new Guid("6c408478-b40f-4b53-9491-b01cf8ec0213"),
                             Cost = 2.32m,
                             Name = "Milk 500ml",
                             ShopId = 1
@@ -71,7 +73,7 @@ namespace _04_CRUD.Migrations
                         new
                         {
                             ShopId = 1,
-                            Created = new DateTime(2020, 2, 21, 14, 49, 32, 823, DateTimeKind.Local).AddTicks(5708),
+                            Created = new DateTime(2020, 2, 21, 14, 21, 32, 878, DateTimeKind.Local).AddTicks(7536),
                             Name = "Super Grocery"
                         });
                 });
